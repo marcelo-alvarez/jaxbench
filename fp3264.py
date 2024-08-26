@@ -1,14 +1,8 @@
 import os
-from pathlib import Path
 import sys
 import jax
 import numpy as np
 import jax.numpy as jnp
-import scipy
-from jax import jit
-from jax.experimental import mesh_utils
-from jax.experimental.multihost_utils import sync_global_devices
-from jax.sharding import Mesh, PartitionSpec as P, NamedSharding
 
 import time, timeit
 from pario import parprint
@@ -17,7 +11,7 @@ nr = 5
 nt = 3
 verbose = False
 docpu = False
-size2 = 1024
+size2 = 4096
 if len(sys.argv) > 1: 
     size2 = int(sys.argv[1])
 size = size2**2
